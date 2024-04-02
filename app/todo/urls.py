@@ -12,8 +12,8 @@ from todo import views
 
 
 router = DefaultRouter()
-router.register('tasks', '')
-router.register('groups', '')
+# router.register('tasks', '')
+# router.register('groups', '')
 
 app_name = 'todo'
 

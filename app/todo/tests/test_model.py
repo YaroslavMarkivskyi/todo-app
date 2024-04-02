@@ -12,6 +12,19 @@ class ModelTests(TestCase):
     """
     Test cases for  models.
     """
+    def test_create_group(self):
+        """Test creating a group to collect tasks."""
+        user = get_user_model().objects.create_user(
+            'test@example.com',
+            'testpass123'
+        )
+        group = models.Group.objects.create(
+            user=user,
+            title="Group of tasks."
+        )
+        self.assertEqual(str(group), group.title)
+        self.assertTrue(models.Group.objects.filter(pk=group.pk).exists())
+
     def test_create_task_without_group(self):
         """Test creating a task is succesfull."""
         user = get_user_model().objects.create_user(
