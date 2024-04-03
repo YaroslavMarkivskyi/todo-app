@@ -14,18 +14,18 @@ from todo.models import (
     Task,
 )
 
-from todo.serializer import (
+from todo.serializers import (
     TaskSerializer,
     TaskDetailSerializer,
 )
 
 
-TASKS_URL = reverse('task:task-list')
+TASKS_URL = reverse('todo:task-list')
 
 
 def detail_url(task_id):
     """Create and return a task detail URL."""
-    return reverse('task:task-detail', args=[task_id])
+    return reverse('todo:task-detail', args=[task_id])
 
 
 def create_task(user, group=None, **params):
