@@ -9,6 +9,7 @@ from datetime import date
 
 from todo import models
 
+
 class ModelTests(TestCase):
     """
     Test cases for  models.
@@ -29,9 +30,9 @@ class ModelTests(TestCase):
     def test_create_group_without_user(self):
         """Test creating group without user raises error."""
         with self.assertRaises(IntegrityError):
-            group = models.Group.objects.create(
-            title="Group of tasks."
-        )
+            models.Group.objects.create(
+                title="Group of tasks."
+                )
 
     def test_create_task_without_group(self):
         """Test creating a task without group is succesfull."""

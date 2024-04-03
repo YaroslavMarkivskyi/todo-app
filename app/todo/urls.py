@@ -8,7 +8,7 @@ from django.urls import (
 
 from rest_framework.routers import DefaultRouter
 
-from todo import views
+# from todo import views
 
 
 router = DefaultRouter()
