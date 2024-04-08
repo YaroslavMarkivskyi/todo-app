@@ -50,7 +50,6 @@ class PrivateGroupsApiTests(TestCase):
         """Test retrieving a list of groups."""
         Group.objects.create(user=self.user, title='Kale')
         Group.objects.create(user=self.user, title='Vanilla')
-
         res = self.client.get(GROUPS_URL)
 
         groups = Group.objects.all().order_by('-title')
@@ -73,7 +72,7 @@ class PrivateGroupsApiTests(TestCase):
 
     def test_update_group(self):
         """Test updating an group."""
-        group = Group.objects.create(user=self.user, name='Cilantro')
+        group = Group.objects.create(user=self.user, title='Cilantro')
 
         payload = {'title': 'Coriander'}
         url = detail_url(group.id)
@@ -81,11 +80,11 @@ class PrivateGroupsApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         group.refresh_from_db()
-        self.assertEqual(group.name, payload['title'])
+        self.assertEqual(group.title, payload['title'])
 
     def test_delete_group(self):
         """Test deleting an group."""
-        group = Group.objects.create(user=self.user, name='Lettuce')
+        group = Group.objects.create(user=self.user, title='Lettuce')
 
         url = detail_url(group.id)
         res = self.client.delete(url)
