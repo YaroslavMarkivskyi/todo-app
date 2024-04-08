@@ -16,7 +16,6 @@ from todo.models import (
 
 from todo.serializers import (
     TaskSerializer,
-    TaskDetailSerializer,
 )
 
 
@@ -102,7 +101,7 @@ class PrivateTaskAPITests(TestCase):
         url = detail_url(task.id)
         res = self.client.get(url)
 
-        serializer = TaskDetailSerializer(task)
+        serializer = TaskSerializer(task)
         self.assertEqual(res.data, serializer.data)
 
     def test_create_task(self):
