@@ -13,6 +13,7 @@ from todo import views
 
 router = DefaultRouter()
 router.register('tasks', views.TaskViewSet)
+router.register('groups', views.GroupViewSet)
 
 app_name = 'todo'
 
