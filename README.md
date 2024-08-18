@@ -1,4 +1,4 @@
-# Todo app
+# Todo list
 
 The Todo App is a comprehensive task management API designed to help users manage their tasks and groups effectively. Developed using Python and Django Rest Framework (DRF), this application is containerized with Docker and uses PostgreSQL as its database. It is built to be scalable and efficient, featuring Nginx as a reverse proxy and utilizing GitHub Actions for continuous integration and deployment.
 
